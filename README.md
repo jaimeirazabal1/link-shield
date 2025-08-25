@@ -72,7 +72,89 @@ npm run test:e2e
 
 ## Ejemplo de uso
 
-Puedes crear un enlace y registrar clics mediante los endpoints REST definidos en `links.controller.ts`.
+
+### Ejemplos de peticiones REST
+
+#### 1. Crear un enlace
+
+```http
+POST /links
+Content-Type: application/json
+
+{
+  "url": "https://ejemplo.com"
+}
+```
+**Respuesta:**
+```json
+{
+  "id": 1,
+  "url": "https://ejemplo.com"
+}
+```
+
+#### 2. Listar todos los enlaces
+
+```http
+GET /links
+```
+**Respuesta:**
+```json
+[
+  { "id": 1, "url": "https://ejemplo.com" },
+  { "id": 2, "url": "https://otro.com" }
+]
+```
+
+#### 3. Registrar un clic en un enlace
+
+```http
+POST /links/1/click
+Content-Type: application/json
+
+{
+  "ipAddress": "192.168.1.1"
+}
+```
+**Respuesta:**
+```json
+{
+  "id": 1,
+  "timestamp": "2025-08-25T12:34:56.000Z",
+  "ipAddress": "192.168.1.1",
+  "link": 1
+}
+```
+
+#### 4. Listar clics de un enlace
+
+```http
+GET /links/1/clicks
+```
+**Respuesta:**
+```json
+[
+  {
+    "id": 1,
+    "timestamp": "2025-08-25T12:34:56.000Z",
+    "ipAddress": "192.168.1.1",
+    "link": 1
+  }
+]
+```
+
+#### 5. Eliminar un enlace
+
+```http
+DELETE /links/1
+```
+**Respuesta:**
+```json
+{
+  "message": "Enlace eliminado"
+}
+
+Puedes probar estos endpoints usando herramientas como [Postman](https://www.postman.com/) o [curl](https://curl.se/).
 
 ## Pruebas
 
