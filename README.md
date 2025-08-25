@@ -30,7 +30,7 @@ src/
 
 1. Clona el repositorio:
    ```bash
-   git clone <url-del-repo>
+   git clone https://github.com/jaimeirazabal1/link-shield
    cd link-shield
    ```
 2. Instala las dependencias:
