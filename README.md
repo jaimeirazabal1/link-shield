@@ -153,7 +153,7 @@ DELETE /links/1
 {
   "message": "Enlace eliminado"
 }
-
+```
 Puedes probar estos endpoints usando herramientas como [Postman](https://www.postman.com/) o [curl](https://curl.se/).
 
 ## Pruebas
